@@ -94,7 +94,7 @@ body {
   font-weight: bold;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
   #container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1.25fr;
@@ -129,19 +129,16 @@ body {
   #container {
     width: 80%;
     height: 350px;
-    border: 1px solid black;
     margin: 15px auto;
+    background-image: url("https://cdn.pixabay.com/photo/2016/11/22/19/15/audience-1850119_960_720.jpg");
+    padding: 15px;
   }
   #container .qr img {
     min-width: 150px;
   }
   #container:after {
-    top: 0;
-    left: 8%;
-    bottom: 58%;
-    right: 8%;
-    position: absolute;
-    z-index: -1;
+    content: none;
+    background-image: none;
   }
   #container .main,
   #container .day,
@@ -150,17 +147,32 @@ body {
     border-bottom: 1px solid black;
     border-right: 1px solid black;
   }
+  #container .main,
+  #container .day,
+  #container .extra {
+    border-left: 1px solid black;
+  }
+  #container .main {
+    border-top: 1px solid black;
+  }
+
   #container .extra {
     display: flex;
     align-items: center;
     justify-items: center;
+    border-bottom: 1px solid black;
+  }
+  #container .qr {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
   }
   #container .main {
     line-height: 70px;
   }
   #container .main .title {
     order: 2;
-    font-size: 5vw;
+    font-size: 4vw;
   }
   #container .day,
   #container .info,
