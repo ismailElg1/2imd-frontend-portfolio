@@ -6,13 +6,27 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
     grid-template-rows: 1fr 1fr 1fr; 
-    gap: 0px 0px; 
-   
-
+    gap: 1em;
+    grid-template-areas: 
+    ". . b . ."
+    ". . b y y"
+    ". . b y y"; 
 }
 
+#container div{
+
+   
+}
 .red{
-    width: 100%;
-    height: 50px;
+   
     background-color: rgb(165, 0, 55);
+}
+.blue{
+    background-color: royalblue;
+    grid-area: b;
+}
+.yellow{
+    background-color: yellow;
+    
+    grid-area: y;
 }
