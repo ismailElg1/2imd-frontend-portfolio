@@ -6,19 +6,25 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
     grid-template-rows: 1fr 1fr 1fr; 
-    gap: 1em;
+    gap: 0.5em;
     grid-template-areas: 
     ". . b . ."
     ". . b y y"
     ". . b y y"; 
+  
+      
 }
 
 #container div{
+   padding: 4em 2em;
 
-   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+
 }
 .red{
-   
     background-color: rgb(165, 0, 55);
 }
 .blue{
@@ -27,6 +33,6 @@
 }
 .yellow{
     background-color: yellow;
-    
     grid-area: y;
+
 }
