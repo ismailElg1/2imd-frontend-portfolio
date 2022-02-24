@@ -6,5 +6,6 @@
 ### Grid Ticket - WE ARE IMD TICKET
 [We Are IMD Ticket - CodePen](https://codepen.io/ismailelg1/pen/MWOBEGx) 🙃
 
-### Screenshot
- yet to come...
+### Screenshots
+![flex_froggy](flexbox_froggy.png)
+![grid_garden](grid_garden.png)
