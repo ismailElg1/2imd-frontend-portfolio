@@ -9,17 +9,17 @@ body {
   letter-spacing: 3px;
 }
 #container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 0.4fr 2fr 0.25fr 0.25fr; 
-    grid-template-areas: 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.4fr 2fr 0.25fr 0.25fr;
+  grid-template-areas:
     "m m"
     "t t"
     ". ."
-    "p p"; 
-  
-    text-align: center;
-    height: 100vh;
+    "p p";
+
+  text-align: center;
+  height: 100vh;
 }
 #container:after {
   content: "";
@@ -33,7 +33,7 @@ body {
   z-index: -1;
 }
 #container img {
-    width: 300px;
+  width: 300px;
   max-width: 100%;
 }
 
@@ -43,53 +43,52 @@ body {
   display: flex;
   flex-direction: column;
   grid-area: m;
-
 }
 
-#container .main .slogan{
+#container .main .slogan {
   order: 2;
   letter-spacing: 5px;
 }
 #container .main .title {
   order: 1;
 }
-#container .extra{
-    display: none;
+#container .extra {
+  display: none;
 }
-#container .qr{
-    grid-area: t;
-    padding: 5em;
+#container .qr {
+  grid-area: t;
+  padding: 5em;
 }
-#container div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+#container div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-.title{
-    font-size: 45px;
-    font-weight: bold;
-   letter-spacing: 8px;
+.title {
+  font-size: 45px;
+  font-weight: bold;
+  letter-spacing: 8px;
 }
-.slogan{
-    font-weight: lighter;
+.slogan {
+  font-weight: lighter;
 }
-#container .day, #container .info{
-    border-top: 2px solid black;
-    border-right: 2px solid black;
-    font-weight: bold;
+#container .day,
+#container .info {
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  font-weight: bold;
 }
-#container .day{
-    border-left: 2px solid black;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
-    font-weight: bold;
+#container .day {
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  font-weight: bold;
 }
-#container .price{
-    grid-area: p;
-    border: 2px solid black;
-   
+#container .price {
+  grid-area: p;
+  border: 2px solid black;
 }
-#container .price span{
-    font-weight: bold;
+#container .price span {
+  font-weight: bold;
 }
