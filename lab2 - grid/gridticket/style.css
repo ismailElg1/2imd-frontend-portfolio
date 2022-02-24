@@ -6,17 +6,18 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 3px;
 }
 #container {
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 0.5fr 2fr 0.5fr 0.5fr; 
+    grid-template-rows: 0.4fr 2fr 0.25fr 0.25fr; 
     grid-template-areas: 
     "m m"
     "t t"
     ". ."
     "p p"; 
-    border: 1px solid black;
+  
     text-align: center;
     height: 100vh;
 }
@@ -47,6 +48,7 @@ body {
 
 #container .main .slogan{
   order: 2;
+  letter-spacing: 5px;
 }
 #container .main .title {
   order: 1;
@@ -59,25 +61,35 @@ body {
     padding: 5em;
 }
 #container div{
-
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-
 }
 .title{
     font-size: 45px;
     font-weight: bold;
-    letter-spacing: 5px;
+   letter-spacing: 8px;
+}
+.slogan{
+    font-weight: lighter;
 }
 #container .day, #container .info{
-    border-top: 1px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    font-weight: bold;
 }
 #container .day{
-    border-right: 1px solid black;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    font-weight: bold;
 }
 #container .price{
     grid-area: p;
-    border-top: 1px solid black;
+    border: 2px solid black;
+   
+}
+#container .price span{
+    font-weight: bold;
 }
