@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
 }
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
 
 #container{
     display: grid;
@@ -11,8 +15,6 @@
     ". . b . ."
     ". . b y y"
     ". . b y y"; 
-  
-      
 }
 
 #container div{
@@ -25,14 +27,44 @@
 
 }
 .red{
-    background-color: rgb(165, 0, 55);
+    background-color: rgb(202, 11, 75);
 }
 .blue{
-    background-color: royalblue;
+    background-color: cyan;
     grid-area: b;
 }
 .yellow{
     background-color: yellow;
     grid-area: y;
+}
 
+@media(max-width: 1000px){
+    #container{
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+        grid-template-areas: 
+        ". ."
+        "b ."
+        ". y" 
+        ". ."
+        ". ."; 
+    }
+}
+@media(max-width: 600px){
+    #container{
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; 
+        grid-template-areas: 
+        "."
+        "."
+        "b" 
+        "."
+        "."
+        "y"
+        "."
+        "."
+        "."
+        ".";
+        
+    }
 }
