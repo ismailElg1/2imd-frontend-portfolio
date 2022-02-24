@@ -94,83 +94,80 @@ body {
   font-weight: bold;
 }
 
-@media(min-width: 800px){
-    #container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1.25fr;
-        grid-template-rows: 1fr 0.30fr 0.20fr;
-        grid-template-areas:
-          "m m m t"
-          ". . p t"
-          "e e e t";
-      
-        text-align: center;
-        height: 100vh;
-        
-      }
-    #container .extra {
-        display: block;
-        grid-area: e;
-     
-        border-right: 1px solid black;
-      
-      
-    }
-    #container .main{
-        background: none;
-        color: black;
-        display: flex;
-        flex-direction: column;
-        grid-area: m;
-    }
-    #container .price, #container .info, #container .day{
-        border: none;
-    }
+@media (min-width: 800px) {
+  #container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.25fr;
+    grid-template-rows: 1fr 0.3fr 0.2fr;
+    grid-template-areas:
+      "m m m t"
+      ". . p t"
+      "e e e t";
 
-    #container{
-     
-     width: 80%;
-        height: 350px;
-        border: 1px solid black;
-        margin: 15px auto;
-        
-    }
-    #container .qr img{
-       min-width: 150px;
-    }
-    #container:after {
-        content: "";
-        background-image: url("content/audience-gc9093f083_1920.jpg");
-        opacity: 0.5;
-        top: 0;
-        left: 8%;
-        bottom: 58%;
-        right: 8%;
-        position: absolute;
-        z-index: -1;
-      }
-      #container .main,    #container .day,     #container .info,     #container .price{
-          border-bottom: 1px solid black;
-          border-right: 1px solid black;
-    
-        }
-      #container .extra{
-          display: flex;
-       align-items: center;
-       justify-items: center;
-      }
-      #container .main{
-      line-height: 70px;
-    }
-      #container .main .title{
-          order: 2;
-          font-size: 5vw;
-      }
-        #container .day,     #container .info,     #container .price{
+    text-align: center;
+    height: 100vh;
+  }
+  #container .extra {
+    display: block;
+    grid-area: e;
+
+    border-right: 1px solid black;
+  }
+  #container .main {
+    background: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    grid-area: m;
+  }
+  #container .price,
+  #container .info,
+  #container .day {
+    border: none;
+  }
+
+  #container {
+    width: 80%;
+    height: 350px;
+    border: 1px solid black;
+    margin: 15px auto;
+  }
+  #container .qr img {
+    min-width: 150px;
+  }
+  #container:after {
+    content: "";
+    background-image: url("content/audience-gc9093f083_1920.jpg");
+    opacity: 0.5;
+    top: 0;
+    left: 8%;
+    bottom: 58%;
+    right: 8%;
+    position: absolute;
+    z-index: -1;
+  }
+  #container .main,
+  #container .day,
+  #container .info,
+  #container .price {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+  }
+  #container .extra {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+  #container .main {
+    line-height: 70px;
+  }
+  #container .main .title {
+    order: 2;
+    font-size: 5vw;
+  }
+  #container .day,
+  #container .info,
+  #container .price {
     font-size: 1.5vw;
-  
-      }
-      
-  
-    
+  }
 }
