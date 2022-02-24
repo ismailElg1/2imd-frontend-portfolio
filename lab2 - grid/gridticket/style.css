@@ -24,7 +24,7 @@ body {
 }
 #container:after {
   content: "";
-  background-image: url("content/audience-gc9093f083_1920.jpg");
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/22/19/15/audience-1850119_960_720.jpg");
   opacity: 0.5;
   top: 0;
   left: 0;
@@ -136,9 +136,6 @@ body {
     min-width: 150px;
   }
   #container:after {
-    content: "";
-    background-image: url("content/audience-gc9093f083_1920.jpg");
-    opacity: 0.5;
     top: 0;
     left: 8%;
     bottom: 58%;
