@@ -65,7 +65,6 @@ export default class App {
           let todo = new Todo(list[i]);
           todo.add();
       }
-      
       }
     
       

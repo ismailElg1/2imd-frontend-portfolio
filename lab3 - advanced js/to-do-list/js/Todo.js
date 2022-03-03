@@ -1,5 +1,5 @@
-let listArray =  [] || JSON.parse(localStorage.getItem("list")) ;
-let rewrite = false;
+let listArray =    JSON.parse(localStorage.getItem("list")) || [];
+
 export default class Todo {
 
 
@@ -22,7 +22,7 @@ export default class Todo {
         
         let li = document.createElement('li');
         li.innerHTML = this.title;
-        li.classList.add('prior-high');
+        li.classList.add('prior-medium');
         li.addEventListener('click', this.markDone);
         return li;
 
@@ -39,7 +39,6 @@ export default class Todo {
         document.getElementById('todo-list').removeChild(this);
         // var list = JSON.parse(localStorage.getItem('list'));
         // console.log();
-     
      
         // localStorage.removeItem(this.title);
         // localStorage.removeItem();
