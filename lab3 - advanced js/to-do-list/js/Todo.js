@@ -12,7 +12,11 @@ export default class Todo {
       // check if the todo item includes a priority like medium: to generate the correct classnames
       // don't forget to hook up an event listener for the click event
       // return newNote;
+        let li = document.createElement('li');
+        li.innerHTML = this.title;
+        li.classList.add('prior-high');
 
+        return li;
     }
   
     markDone(e) {
@@ -26,7 +30,10 @@ export default class Todo {
     add() {
       // HINT🤩
       // this function should append the note to the screen somehow
-      // let todo = this.createElement(); // should return a full <li> with the right classes and innerHTML
+      let todo = this.createElement(); // should return a full <li> with the right classes and innerHTML
+    
+      document.getElementById('todo-list').appendChild(todo);
+    
     }
   
     saveToStorage() {
