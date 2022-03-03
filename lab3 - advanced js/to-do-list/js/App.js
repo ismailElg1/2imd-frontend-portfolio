@@ -59,7 +59,7 @@ export default class App {
   
     reset() {
       // this function should reset the form / clear the text field
-      document.getElementById("add-item-text").value = " ";
+      document.getElementById("add-item-text").value = "";
     }
   }
 

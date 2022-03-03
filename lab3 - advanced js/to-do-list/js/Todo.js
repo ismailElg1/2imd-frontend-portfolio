@@ -12,10 +12,12 @@ export default class Todo {
       // check if the todo item includes a priority like medium: to generate the correct classnames
       // don't forget to hook up an event listener for the click event
       // return newNote;
+
+        
         let li = document.createElement('li');
         li.innerHTML = this.title;
         li.classList.add('prior-high');
-
+        li.addEventListener('click', this.markDone);
         return li;
     }
   
@@ -23,8 +25,9 @@ export default class Todo {
       // HINT🤩
       // this function should mark the current todo as done, by adding the correct CSS class
       // if the item is clicked, but was already marked as done, remove the item from the list
-      e.classList.add("done");
       console.log('click');
+   
+     
     }
   
     add() {
@@ -40,6 +43,7 @@ export default class Todo {
       // HINT🤩
       // localStorage only supports strings, not arrays
       // if you want to store arrays, look at JSON.parse and JSON.stringify
+    
     }
   }
   
