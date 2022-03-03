@@ -1,5 +1,5 @@
-let listArray = JSON.parse(localStorage.getItem("list")) || [];
-
+let listArray =  [] || JSON.parse(localStorage.getItem("list")) ;
+let rewrite = false;
 export default class Todo {
 
 
@@ -36,14 +36,37 @@ export default class Todo {
      
    
       if(this.classList.contains('done')){
-        // document.getElementById('todo-list').removeChild(this);
-
-        console.log("it has it");
+        document.getElementById('todo-list').removeChild(this);
+        // var list = JSON.parse(localStorage.getItem('list'));
+        // console.log();
+     
+     
+        // localStorage.removeItem(this.title);
+        // localStorage.removeItem();
+        // let list = JSON.parse(localStorage.getItem('list'));
+        // let checked = list.indexOf(this.outerHTML.replace(/(<([^>]+)>)/gi, ""));
+        // let newList = list.splice(checked, checked);
+        // if(!rewrite){
+        
+          
+        // }
+        // else{
+        //     localStorage.removeItem('list');
+        // }
+        // localStorage.setItem('list', '[]');
+        // list.splice(list.findIndex(e => e.name === this.outerHTML.replace(/(<([^>]+)>)/gi, "")),1);
+        // console.log(list);
+        // localStorage.setItem('list', JSON.stringify(listArray));
       
+        // console.log(list);
+        // localStorage.setItem('list', list);
+        // list.pop();
+        
+    
       }
       else{
         this.classList.add('done');
-        console.log("it doesnt");
+       
       }
       
      
@@ -68,7 +91,7 @@ export default class Todo {
             localStorage.setItem('list', '[]');
             listArray.push(this.title);
             localStorage.setItem('list', JSON.stringify(listArray));
-            console.log(localStorage.getItem('list'));
+           
       
     
       
