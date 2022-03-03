@@ -23,6 +23,8 @@ export default class App {
         
       document.querySelector('#add-item-text').addEventListener('keyup', this.createItem.bind(this));
       console.log(this);
+      
+      
     }
   
     createItem(e) {
@@ -38,12 +40,14 @@ export default class App {
       let text = document.getElementById("add-item-text").value;
       
       if(e.key==="Enter"){
+        
           console.log("🗿");
           let todo = new Todo(text);
           todo.add();
           console.log(todo);
-          document.getElementById("add-item-text").value = " ";
           
+          this.reset();
+         
       }
     }
   
@@ -55,6 +59,7 @@ export default class App {
   
     reset() {
       // this function should reset the form / clear the text field
+      document.getElementById("add-item-text").value = " ";
     }
   }
 
