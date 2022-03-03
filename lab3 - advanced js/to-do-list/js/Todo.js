@@ -1,5 +1,3 @@
-import { list } from "postcss";
-
 let listArray = JSON.parse(localStorage.getItem("list")) || [];
 
 export default class Todo {
@@ -35,8 +33,18 @@ export default class Todo {
       // HINT🤩
       // this function should mark the current todo as done, by adding the correct CSS class
       // if the item is clicked, but was already marked as done, remove the item from the list
-      console.log(this);
-      this.classList.add('done');
+     
+   
+      if(this.classList.contains('done')){
+        // document.getElementById('todo-list').removeChild(this);
+
+        console.log("it has it");
+      
+      }
+      else{
+        this.classList.add('done');
+        console.log("it doesnt");
+      }
       
      
     }
@@ -56,14 +64,15 @@ export default class Todo {
       // localStorage only supports strings, not arrays
       // if you want to store arrays, look at JSON.parse and JSON.stringify
       
-        if(localStorage.getItem('list')!=null){
+      
             localStorage.setItem('list', '[]');
             listArray.push(this.title);
             localStorage.setItem('list', JSON.stringify(listArray));
             console.log(localStorage.getItem('list'));
-        }
+      
     
       
     }
+
   }
   

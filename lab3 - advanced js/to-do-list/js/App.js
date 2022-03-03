@@ -36,11 +36,11 @@ export default class App {
       // clear the text field with .reset() after adding the item
       // if (e.key === "Enter")
       let text = document.getElementById("add-item-text").value.trim();
-    
+
       if(e.key==="Enter"){
         
         if(text!=""&&text!=" "){
-            console.log("🗿");
+       
             let todo = new Todo(text);
             todo.add();
             todo.saveToStorage();
