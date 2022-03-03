@@ -1,8 +1,16 @@
+import { list } from "postcss";
+
+let listArray = JSON.parse(localStorage.getItem("list")) || [];
+
 export default class Todo {
+
+
+
     constructor(title) {
       // HINT🤩
       // use a constructor to set basic property values
       this.title = title;
+    
     }
   
     createElement() {
@@ -19,14 +27,17 @@ export default class Todo {
         li.classList.add('prior-high');
         li.addEventListener('click', this.markDone);
         return li;
+
+       
     }
   
     markDone(e) {
       // HINT🤩
       // this function should mark the current todo as done, by adding the correct CSS class
       // if the item is clicked, but was already marked as done, remove the item from the list
-      console.log('click');
-   
+      console.log(this);
+      this.classList.add('done');
+      
      
     }
   
@@ -38,13 +49,21 @@ export default class Todo {
       document.getElementById('todo-list').appendChild(todo);
       
     }
-  
+
+    
     saveToStorage() {
       // HINT🤩
       // localStorage only supports strings, not arrays
       // if you want to store arrays, look at JSON.parse and JSON.stringify
-
-     
+      
+        if(localStorage.getItem('list')!=null){
+            localStorage.setItem('list', '[]');
+            listArray.push(this.title);
+            localStorage.setItem('list', JSON.stringify(listArray));
+            console.log(localStorage.getItem('list'));
+        }
+    
+      
     }
   }
   
