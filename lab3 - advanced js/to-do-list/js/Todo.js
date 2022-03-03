@@ -18,15 +18,25 @@ export default class Todo {
       // check if the todo item includes a priority like medium: to generate the correct classnames
       // don't forget to hook up an event listener for the click event
       // return newNote;
-
+       
         
         let li = document.createElement('li');
+        
+        const front = this.title.substring(0, this.title.indexOf(':'));
+        switch(front){
+            case "low": li.classList.add('prior-low'); 
+            break;
+            case "medium": li.classList.add('prior-medium');
+            break;
+            case "high": li.classList.add('prior-high');
+            break;
+            default: li.classList.add('prior-medium');
+            break;
+        }
+        console.log(front);
         li.innerHTML = this.title;
-        li.classList.add('prior-medium');
         li.addEventListener('click', this.markDone);
         return li;
-
-       
     }
   
     markDone(e) {
