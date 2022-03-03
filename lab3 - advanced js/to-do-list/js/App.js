@@ -1,4 +1,4 @@
-class App {
+export default class App {
     constructor() {
       console.log("🍕");
       // HINT🤩
@@ -6,6 +6,7 @@ class App {
       // this.setupEventListeners();
       // when the app loads, we can show previously saved items from localstorage
       // this.loadFromStorage();
+  
     }
   
     setupEventListeners() {
@@ -15,6 +16,7 @@ class App {
       // addEventListener("keyup", this.createItem.bind(this));
       // read up on .bind() -> we need to pass the current meaning of this to the eventListener
       // while testing, feel free to console.log(this) to see what's in it
+     
     }
   
     createItem(e) {
@@ -39,4 +41,6 @@ class App {
       // this function should reset the form / clear the text field
     }
   }
+
+
   
