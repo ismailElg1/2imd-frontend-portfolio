@@ -59,16 +59,12 @@ export default class App {
       // load all items from storage here and add them to the screen
       // use the Todo class to create the elements
       if(localStorage.getItem('list')!=null){
-        
       let list = JSON.parse(localStorage.getItem('list'));
       for(let i=0; i<list.length; i++){
           let todo = new Todo(list[i]);
           todo.add();
       }
       }
-    
-      
-
     }
   
     reset() {

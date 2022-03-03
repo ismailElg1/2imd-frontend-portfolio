@@ -1,4 +1,4 @@
-let listArray =    JSON.parse(localStorage.getItem("list")) || [];
+let listArray = JSON.parse(localStorage.getItem('list')) || [];
 
 export default class Todo {
 
@@ -19,21 +19,23 @@ export default class Todo {
       // don't forget to hook up an event listener for the click event
       // return newNote;
        
-        
+    //   localStorage.removeItem('list');
+   
+
         let li = document.createElement('li');
         
         const front = this.title.substring(0, this.title.indexOf(':'));
         switch(front){
-            case "low": li.classList.add('prior-low'); 
+            case "low": li.classList.add('prior-low');  this.title = this.title.slice(front.length+1,this.title.length).trim();
             break;
-            case "medium": li.classList.add('prior-medium');
+            case "high": li.classList.add('prior-high'); this.title = this.title.slice(front.length+1,this.title.length).trim();
             break;
-            case "high": li.classList.add('prior-high');
-            break;
-            default: li.classList.add('prior-medium');
+            default: li.classList.add('prior-medium'); this.title = this.title.slice(front.length,this.title.length).trim();
             break;
         }
         console.log(front);
+       
+        
         li.innerHTML = this.title;
         li.addEventListener('click', this.markDone);
         return li;
