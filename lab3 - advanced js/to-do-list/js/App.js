@@ -1,3 +1,5 @@
+import Todo from "./Todo";
+
 export default class App {
     constructor() {
       console.log("🍕");
@@ -6,6 +8,8 @@ export default class App {
       // this.setupEventListeners();
       // when the app loads, we can show previously saved items from localstorage
       // this.loadFromStorage();
+      this.setupEventListeners();
+      this.loadFromStorage();
   
     }
   
@@ -16,7 +20,9 @@ export default class App {
       // addEventListener("keyup", this.createItem.bind(this));
       // read up on .bind() -> we need to pass the current meaning of this to the eventListener
       // while testing, feel free to console.log(this) to see what's in it
-     
+        
+      document.querySelector('#add-item-text').addEventListener('keyup', this.createItem.bind(this));
+      console.log(this);
     }
   
     createItem(e) {
@@ -29,6 +35,10 @@ export default class App {
       // if you used bind() in the previous function, you'll notice that this refers to the current class instance
       // clear the text field with .reset() after adding the item
       // if (e.key === "Enter")
+
+      if(e.key==="Enter"){
+          console.log("🗿");
+      }
     }
   
     loadFromStorage() {
