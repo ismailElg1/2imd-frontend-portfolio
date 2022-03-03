@@ -36,14 +36,18 @@ export default class Todo {
       let todo = this.createElement(); // should return a full <li> with the right classes and innerHTML
     
       document.getElementById('todo-list').appendChild(todo);
-    
+      
     }
   
     saveToStorage() {
       // HINT🤩
       // localStorage only supports strings, not arrays
       // if you want to store arrays, look at JSON.parse and JSON.stringify
-    
+
+
+      if(localStorage.getItem('list')== null){
+          localStorage.setItem('list', '[]')
+      }
     }
   }
   
