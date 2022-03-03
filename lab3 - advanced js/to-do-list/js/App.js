@@ -35,12 +35,14 @@ export default class App {
       // if you used bind() in the previous function, you'll notice that this refers to the current class instance
       // clear the text field with .reset() after adding the item
       // if (e.key === "Enter")
-
+      let text = document.getElementById("add-item-text").value;
+      
       if(e.key==="Enter"){
           console.log("🗿");
-          let todo = new Todo("this is a demo");
+          let todo = new Todo(text);
           todo.add();
           console.log(todo);
+          document.getElementById("add-item-text").value = " ";
           
       }
     }
