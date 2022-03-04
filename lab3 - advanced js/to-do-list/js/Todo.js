@@ -27,8 +27,6 @@ export default class Todo {
         this.title = this.title.slice(front.length, this.title.length).trim();
         break;
     }
-    console.log(front);
-
     li.innerHTML = this.title;
     li.addEventListener("click", this.markDone);
     return li;

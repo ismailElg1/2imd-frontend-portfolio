@@ -2,13 +2,11 @@ import Todo from "./Todo";
 
 export default class App {
   constructor() {
-    console.log("🍕");
     this.setupEventListeners();
     this.loadFromStorage();
   }
 
   setupEventListeners() {
-    console.log("👂🏽");
     document
       .querySelector("#add-item-text")
       .addEventListener("keyup", this.createItem.bind(this));
