@@ -35,15 +35,15 @@ export default class Todo {
   markDone() {
     if (this.classList.contains("done")) {
       document.getElementById("todo-list").removeChild(this);
-      let todos;
+      let listArr;
       if (localStorage.getItem("list") === null) {
-        todos = [];
+        listArr = [];
       } else {
-        todos = JSON.parse(localStorage.getItem("list"));
+        listArr = JSON.parse(localStorage.getItem("list"));
       }
       const index = this.innerText;
-      todos.splice(todos.indexOf(index), 1);
-      localStorage.setItem("list", JSON.stringify(todos));
+      listArr.splice(listArr.indexOf(index), 1);
+      localStorage.setItem("list", JSON.stringify(listArr));
     } else {
       this.classList.add("done");
     }
