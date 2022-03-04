@@ -45,16 +45,23 @@ export default class Todo {
     return li;
   }
 
-  markDone(e) {
+  markDone() {
     // HINT🤩
     // this function should mark the current todo as done, by adding the correct CSS class
     // if the item is clicked, but was already marked as done, remove the item from the list
-
+  
     if (this.classList.contains("done")) {
       document.getElementById("todo-list").removeChild(this);
-      // var list = JSON.parse(localStorage.getItem('list'));
-      // console.log();
-
+      let todos;
+      if(localStorage.getItem('list') === null){
+      todos = [];
+      }
+      else {
+      todos = JSON.parse(localStorage.getItem('list'));
+      }
+      const index = this.innerText;
+      todos.splice(todos.indexOf(index), 1);
+      localStorage.setItem('list', JSON.stringify(todos));
       // localStorage.removeItem(this.title);
       // localStorage.removeItem();
       // let list = JSON.parse(localStorage.getItem('list'));
@@ -62,7 +69,7 @@ export default class Todo {
       // let newList = list.splice(checked, checked);
       // if(!rewrite){
 
-      // }
+      //}
       // else{
       //     localStorage.removeItem('list');
       // }
@@ -77,7 +84,7 @@ export default class Todo {
     } else {
       this.classList.add("done");
     }
-  }
+   }
 
   add() {
     // HINT🤩
