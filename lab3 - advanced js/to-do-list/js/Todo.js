@@ -13,13 +13,13 @@ export default class Todo {
       case "low":
         li.classList.add("prior-low");
         this.title = this.title
-          .slice(front.length + 1, this.title.length)
+          .slice(front.length, this.title.length)
           .trim();
         break;
       case "high":
         li.classList.add("prior-high");
         this.title = this.title
-          .slice(front.length + 1, this.title.length)
+          .slice(front.length, this.title.length)
           .trim();
         break;
       default:
