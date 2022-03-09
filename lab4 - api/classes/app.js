@@ -26,8 +26,13 @@ export default class App{
             switch(data.currentConditions.conditions){
                 case "Clear": pokeType = 'normal';
                 break;
-                default:  pokeType = 'normal'
+                case "Overcast": pokeType = "fighting";
+                break;
+                case "NEXT": pokeType = "flying";
+                break;
+                default: pokeType = 'normal'
             }
+            console.log(data);
             this.getPokemon(pokeType);
         }).catch(err=>{
             console.log(err);
