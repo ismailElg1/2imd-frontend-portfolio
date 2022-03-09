@@ -5,4 +5,10 @@
   background-color: black;
   overflow: hidden;
   margin: 5em auto;
+  position: relative;
+}
+#ad #status{
+  color: white;
+  position: absolute;
+  top: 0%;
 }

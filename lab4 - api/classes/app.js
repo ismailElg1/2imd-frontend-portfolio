@@ -12,7 +12,7 @@ export default class App{
         this.lng = result.coords.longitude;
         this.getWeather();
         this.getPokemon();
-        this.getPokeImage();
+      
         
     }
     locationFailed(err){
@@ -23,7 +23,7 @@ export default class App{
         fetch(url).then(response => {
             return response.json();
         }).then(data => {
-            document.querySelector("#app").innerHTML = data.currentConditions.conditions;
+            document.querySelector("#status").innerHTML = data.currentConditions.conditions;
             console.log(data);
         }).catch(err=>{
             console.log(err);
@@ -31,20 +31,21 @@ export default class App{
      
     }
     getPokemon(){
-        let url = `https://pokeapi.co/api/v2/type/water`;
+        let url = `https://pokeapi.co/api/v2/pokemon?limit=500`;
         fetch(url).then(response => {
             return response.json();
         }).then(data => {
-            let arraySize = data.pokemon.length;
+            let arraySize = data.results.length;
             let randomPokemon = Math.floor(Math.random() * arraySize) + 1;
-            console.log(data.pokemon[randomPokemon].pokemon.name);
+        
             console.log(data);
+            this.getPokeImage(randomPokemon);
         }).catch(err=>{
             console.log(err);
         });
     }
-    getPokeImage(){
-        let url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/22.gif`;
-     
+    getPokeImage(pokemon){
+        let url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemon}.gif`;
+        document.querySelector("#pokemon").src = url;
     }
 }
