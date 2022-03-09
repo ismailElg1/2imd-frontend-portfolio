@@ -12,6 +12,7 @@ export default class App{
         this.lng = result.coords.longitude;
         this.getWeather();
         this.getPokemon();
+        this.getPokeImage();
         
     }
     locationFailed(err){
@@ -37,8 +38,13 @@ export default class App{
             let arraySize = data.pokemon.length;
             let randomPokemon = Math.floor(Math.random() * arraySize) + 1;
             console.log(data.pokemon[randomPokemon].pokemon.name);
+            console.log(data);
         }).catch(err=>{
             console.log(err);
         });
+    }
+    getPokeImage(){
+        let url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/22.gif`;
+     
     }
 }
