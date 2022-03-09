@@ -23,7 +23,9 @@ export default class App{
         fetch(url).then(response => {
             return response.json();
         }).then(data => {
-            document.querySelector("#status").innerHTML = data.currentConditions.conditions;
+            document.querySelector("#status").innerHTML = "It's " + data.currentConditions.conditions + " Outside<br>"
+            +data.currentConditions.temp+ "°C";
+            document.querySelector("#message").innerHTML = "Consider catching this pokemon";
             console.log(data);
         }).catch(err=>{
             console.log(err);
