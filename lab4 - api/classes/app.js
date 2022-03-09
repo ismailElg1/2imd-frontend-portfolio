@@ -24,13 +24,11 @@ export default class App{
             +data.currentConditions.temp+ "°C";
             let pokeType = null;
             switch(data.currentConditions.conditions){
-                case "Clear": console.log("its clear right now!"); pokeType = 'normal';
+                case "Clear": pokeType = 'normal';
                 break;
-                default: console.log("this is default weather");
-                
+                default:  pokeType = 'normal'
             }
             this.getPokemon(pokeType);
-            console.log(data);
         }).catch(err=>{
             console.log(err);
         });
@@ -44,7 +42,13 @@ export default class App{
             let arraySize = Math.round(data.pokemon.length);
             let randomPokemon = Math.floor(Math.random() * arraySize) + 1;
             let pokemonName = data.pokemon[randomPokemon].pokemon.name;
-           console.log(pokemonName)
+
+         
+          
+            if(pokemonName.includes("-")){
+                pokemonName = pokemonName.substring(0, pokemonName.lastIndexOf('-'));
+            }
+        
             console.log(data);
             this.getPokeImage(pokemonName);
             document.querySelector("#message").innerHTML = `Consider catching this ${data.name} pokemon`;
