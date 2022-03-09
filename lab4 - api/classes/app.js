@@ -19,10 +19,9 @@ export default class App{
     getWeather(){
         let url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${this.lat}%2C%20${this.lng}?unitGroup=metric&key=7CHVDNAGSRHWQ4HVSFUJYFYUY&contentType=json`;
         fetch(url).then(response => {
-            console.log(response);
-            response.json();
-         
+            return response.json();
         }).then(data => {
+            document.querySelector("#app").innerHTML = data.currentConditions.conditions;
             console.log(data);
         }).catch(err=>{
             console.log(err);
