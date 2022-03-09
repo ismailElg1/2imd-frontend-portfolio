@@ -6,9 +6,16 @@
   overflow: hidden;
   margin: 5em auto;
   position: relative;
+  background-image: url("images/background.png");
 }
 #ad #status{
   color: white;
   position: absolute;
   top: 0%;
+}
+#ad #pokemon{
+  width: 150px;
+  position: absolute;
+  bottom: 2em;
+  left: 6em;
 }
