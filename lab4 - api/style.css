@@ -23,10 +23,11 @@ body{
   border-bottom-right-radius: 15px;
 }
 #ad #pokemon{
-  width: 150px;
+  width: 200px;
   position: absolute;
-  bottom: 3em;
-  left: 6em;
+  bottom: 10%;
+  left: 3.5em;
+  animation: bob 1.5s ease-in-out alternate-reverse infinite;
 }
 #ad #status::first-line{
   font-size: 12px;
@@ -45,4 +46,10 @@ body{
   bottom: -2em;
   padding: 5px 0px 0px 0px;
   
+}
+
+@keyframes bob {
+ to{
+   bottom: 18%;
+ }
 }
