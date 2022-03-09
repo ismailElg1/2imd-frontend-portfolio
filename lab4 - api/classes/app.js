@@ -11,6 +11,7 @@ export default class App{
         this.lat = result.coords.latitude;
         this.lng = result.coords.longitude;
         this.getWeather();
+        this.getPokemon();
         
     }
     locationFailed(err){
@@ -26,6 +27,18 @@ export default class App{
         }).catch(err=>{
             console.log(err);
         });
-        console.log();
+     
+    }
+    getPokemon(){
+        let url = `https://pokeapi.co/api/v2/type/water`;
+        fetch(url).then(response => {
+            return response.json();
+        }).then(data => {
+            let arraySize = data.pokemon.length;
+            let randomPokemon = Math.floor(Math.random() * arraySize) + 1;
+            console.log(data.pokemon[randomPokemon].pokemon.name);
+        }).catch(err=>{
+            console.log(err);
+        });
     }
 }
