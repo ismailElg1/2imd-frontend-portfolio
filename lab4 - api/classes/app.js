@@ -28,7 +28,37 @@ export default class App{
                 break;
                 case "Overcast": pokeType = "fighting";
                 break;
-                case "NEXT": pokeType = "flying";
+                case "Partially cloudy": pokeType = "flying";
+                break;
+                case "Squalls": pokeType = "poison";
+                break;
+                case "Diamond Dust": pokeType = "ground";
+                break;
+                case "Duststorm": pokeType = "rock";
+                break;
+                case "Drizzle": pokeType = "bug";
+                break;
+                case "Fog": pokeType = "ghost";
+                break;
+                case "Heavy Freezing Rain": pokeType = "steel";
+                break;
+                case "Sky Coverage Decreasing": pokeType = "fire";
+                break;
+                case "Rain": pokeType = "water";
+                break;
+                case "Sky Unchanged": pokeType = "grass";
+                break;
+                case "Thunderstorm": pokeType = "electric";
+                break;
+                case "Mist": pokeType = "psychic";
+                break;
+                case "Ice": pokeType = "ice";
+                break;
+                case "Funnel Cloud/Tornado": pokeType = "dragon";
+                break;
+                case "Heavy Drizzle": pokeType = "dark";
+                break;
+                case "Precipitation In Vicinity": pokeType = "fairy";
                 break;
                 default: pokeType = 'normal'
             }
@@ -47,8 +77,6 @@ export default class App{
             let arraySize = Math.round(data.pokemon.length);
             let randomPokemon = Math.floor(Math.random() * arraySize) + 1;
             let pokemonName = data.pokemon[randomPokemon].pokemon.name;
-
-         
           
             if(pokemonName.includes("-")){
                 pokemonName = pokemonName.substring(0, pokemonName.lastIndexOf('-'));
