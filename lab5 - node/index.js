@@ -12,10 +12,12 @@ const port = 3000;
 const server = http.createServer((req, res) => {
     switch(req.url){
         case "/signup":
-            case "/singup": res.end('Signup!');
+            case "/singup": 
+                res.end('Signup!');
             break;
+
             default: 
-            res.end("Hello World");
+                res.end("Hello World");
     }
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
