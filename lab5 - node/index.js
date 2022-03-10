@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
     switch(req.url){
         case "/signup":
             case "/singup": 
-                res.end('Signup!');
+                res.end('This is the signup page!');
             break;
 
             default: 
