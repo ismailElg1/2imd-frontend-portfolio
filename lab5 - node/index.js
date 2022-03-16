@@ -39,12 +39,12 @@ app.post('/api/v1/todos', (req, res) => {
   res.send("POST todos");
 });
 
-app.put('/api/v1/todos', (req, res) => {
+app.put('/api/v1/todos/:id', (req, res) => {
   res.send("PUT todos");
 });
 
-app.delete('/api/v1/todos', (req, res) => {
-  res.send("DELETE todos");
+app.delete('/api/v1/todos/:id', (req, res) => {
+  res.send("DELETE todos "+ req.params.id);
 });
 
  
