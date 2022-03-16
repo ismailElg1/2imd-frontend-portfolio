@@ -28,6 +28,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const logger = require('./middleware/logger')
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
