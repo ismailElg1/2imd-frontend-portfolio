@@ -30,23 +30,11 @@ const app = express()
 const port = 3000
 const logger = require('./middleware/logger')
 
+const apiV1TodosRouter = require('./routers/api/v1/todos');
+
 app.get('/', (req, res) => res.send('Hello World!'))
 
-app.get('/api/v1/todos', (req, res) => {
-  res.send("GET todos");
-});
-
-app.post('/api/v1/todos', (req, res) => {
-  res.send("POST todos");
-});
-
-app.put('/api/v1/todos/:id', (req, res) => {
-  res.send("PUT todos");
-});
-
-app.delete('/api/v1/todos/:id', (req, res) => {
-  res.send("DELETE todos "+ req.params.id);
-});
+app.use('/api/v1/todos', apiV1TodosRouter);
 
  
   // GET api/v1/todos
