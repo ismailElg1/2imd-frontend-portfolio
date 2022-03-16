@@ -1,18 +1,13 @@
 const express = require("express");
 const router = express.Router();
+const todoController = require("../../../controllers/api/v1/todos");
 
-router.get("/", (req, res) => {
-  res.send("GET todos");
-});
+router.get("/", todoController.getAll);
 
-router.post("/", (req, res) => {
-  res.send("POST todos");
-});
+router.post("/", todoController.create);
 
-router.put("/:id", (req, res) => {
-  res.send("PUT todos");
-});
+router.put("/:id", todoController.update);
 
-router.delete("/:id", (req, res) => {
-  res.send("DELETE todos " + req.params.id);
-});
+router.delete("/:id", todoController.remove);
+
+module.exports = router;
