@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./lab5_node/node_modules/bin/www",
-    "start:dev": "nodemon ./lab5_node/node_modules/bin/www"
+    "start": "nodemon lab5_node/bin/www",
+    "start:dev": "nodemon lab5_node/bin/www"
   },
   "dependencies": {
     "config": "^3.3.7",
