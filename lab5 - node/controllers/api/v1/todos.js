@@ -1,7 +1,7 @@
 const Todo = require('../../../models/Todo');
 
 const getAll = (req, res) => {
-    Todo.find({"user": "Bob"}, (err, doc) => {
+    Todo.find({"user": req.user._id}, (err, doc) => {
         if(!err){
             res.json({
                 "status": "success",
@@ -14,11 +14,12 @@ const getAll = (req, res) => {
 }
 
 const create =  (req, res, next) => {
-   
+    
     let todo = new Todo();
     todo.text = req.body.text;
-    todo.user = req.body.user;
-    todo.completed = req.body.completed;
+    console.log(req.user);
+    todo.user = req.user._id;
+    todo.completed = false;
     todo.save((err, doc) => {
         if(err){
             res.json({
