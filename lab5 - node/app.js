@@ -9,7 +9,9 @@ const usersRouter = require('./routes/users');
 const apiTodosRouter = require('./routes/api/v1/todos');
 const passport =require('./passport/passport');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/todosapp', { 
+const config = require('config');
+
+mongoose.connect(process.env.dbconn || config.get('Database.conn'), { 
   useNewUrlParser: true,
 });
 
