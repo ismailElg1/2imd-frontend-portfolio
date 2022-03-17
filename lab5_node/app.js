@@ -17,7 +17,7 @@ mongoose.connect(process.env.dbconn || config.get('Database.conn'), {
 
 const app = express();
 
-//view engine setup
+// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
